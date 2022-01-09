@@ -4,6 +4,8 @@ import 'package:fooder_lich/card3.dart';
 import 'card1.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -16,7 +18,6 @@ class _HomeState extends State<Home> {
     const Card2(),
     const Card3(),
   ];
-  
 
   void onTaping(int index) {
     setState(() {

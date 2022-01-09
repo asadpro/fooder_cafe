@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fooder_lich/fooderlich_theme.dart';
-import 'package:fooder_lich/main.dart';
 
-class Card2 extends StatelessWidget {
+class Card2 extends StatefulWidget {
   const Card2({Key? key}) : super(key: key);
 
+  @override
+  State<Card2> createState() => _Card2State();
+}
+
+class _Card2State extends State<Card2> {
+  bool _isFavourite = false;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-      
         padding: EdgeInsets.all(16.0),
         constraints: BoxConstraints.expand(
           width: 350,
@@ -57,20 +61,18 @@ class Card2 extends StatelessWidget {
             ),
             Positioned(
               right: 10,
-              top: 10,
               child: IconButton(
-                alignment: Alignment.topRight,
+                icon:
+                    Icon(_isFavourite ? Icons.favorite : Icons.favorite_border),
+                iconSize: 30,
+                // 2
+                color: Colors.red,
                 onPressed: () {
-                  const snakbar = SnackBar(
-                    content: Text('Hey! you liked me'),
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(snakbar);
+                  // 3
+                  setState(() {
+                    _isFavourite = !_isFavourite;
+                  });
                 },
-                icon: Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.grey,
-                  size: 32.0,
-                ),
               ),
             ),
             Expanded(

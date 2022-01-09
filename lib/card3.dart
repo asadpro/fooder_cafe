@@ -52,17 +52,15 @@ class Card3 extends StatelessWidget {
             Positioned(
               left: 25.0,
               top: 15.0,
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.book),
-                    Text(
-                      'Recipe Trends',
-                      style: FooderlichTheme.darkTextTheme.headline2,
-                    ),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.book),
+                  Text(
+                    'Recipe Trends',
+                    style: FooderlichTheme.darkTextTheme.headline2,
+                  ),
+                ],
               ),
             ),
             Center(
